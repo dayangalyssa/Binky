@@ -1,0 +1,167 @@
+STANDAR OPERASIONAL PROSEDUR (SOP)
+SOP ini mencakup:
+1. Akses Katalog Online (OPAC)
+Panduan mencari koleksi buku melalui katalog daring Perpustakaan UB di website lib.ub.ac.id, mulai dari pencarian hingga menemukan lokasi fisik buku di rak.
+
+2. Peminjaman Koleksi Buku Secara Mandiri
+Langkah-langkah peminjaman mandiri menggunakan scan KTM dan barcode buku melalui sistem Inlislite, termasuk pengecekan status pemustaka.
+
+3. Layanan Pengembalian Koleksi Buku
+Prosedur pengembalian koleksi buku kepada petugas, pengecekan denda, proses sistem, hingga pencetakan dan penyerahan struk.
+
+4. Layanan Repository Online
+Petunjuk pencarian dan pengunduhan karya ilmiah melalui menu Repository di website perpustakaan, serta solusi jika file tidak tersedia.
+
+5. Layanan Repository Offline
+Tata cara pencarian repository yang berstatus embargo melalui komputer perpustakaan, termasuk akses terbatas dan bantuan petugas.
+
+
+Akses Katalog Online (OPAC) – Perpustakaan Universitas Brawijaya
+
+Langkah 1 – Memulai Pencarian
+Pemustaka membuka website Perpustakaan Universitas Brawijaya di:
+https://lib.ub.ac.id
+Lalu pilih menu DIGILIB
+
+Langkah 2 – Mengisi Kolom Pencarian
+Isi kolom pencarian dengan kata kunci yang diinginkan.
+Pilih jenis pencarian pada kolom “Judul” dan jenis bahan pada kolom “Semua Bahan”.
+
+Langkah 3 – Jika Tidak Ditemukan
+Jika data katalog tidak ditemukan, pemustaka dapat mencoba lagi dengan mengganti kata kunci pencarian yang lain.
+
+Langkah 4 – Data Ditemukan
+Jika data ditemukan, informasi buku akan ditampilkan.
+
+Langkah 5 – Mencatat Judul dan Nomor Panggil
+Pemustaka mencatat judul buku dari hasil pencarian dan nomor panggil buku tersebut.
+
+Langkah 6 – Mencari di Rak Buku
+Datangi rak buku dan cari sesuai dengan nomor panggil buku yang telah dicatat.
+
+Peminjaman Koleksi Buku Secara Mandiri – Perpustakaan Universitas Brawijaya
+
+Langkah 1 – Scan KTM
+Pemustaka melakukan scan Kartu Tanda Mahasiswa (KTM).
+
+Langkah 2 – Cek Status di Aplikasi
+Aplikasi Inlislite Perpustakaan melakukan pengecekan data pemustaka.
+
+Langkah 3 – Scan Buku yang Akan Dipinjam
+Lakukan scan barcode buku yang ingin dipinjam.
+Perhatikan status pemustaka:
+
+Jika AKTIF → proses peminjaman dapat dilanjutkan.
+
+Jika TIDAK AKTIF → hubungi petugas sirkulasi.
+
+Jika ALUMNI → peminjaman tidak diperbolehkan.
+
+Langkah 4 – Proses Peminjaman Buku
+Sistem akan memproses peminjaman koleksi buku.
+
+Langkah 5 – Cetak Struk Peminjaman
+Setelah berhasil, pemustaka dapat mencetak struk peminjaman koleksi buku.
+
+Layanan Pengembalian Koleksi Buku – Perpustakaan Universitas Brawijaya
+
+Langkah 1 – Serahkan Buku
+Pemustaka menyerahkan koleksi buku yang akan dikembalikan.
+
+Langkah 2 – Scan Barcode Buku
+Petugas melakukan scan barcode pada buku yang dikembalikan.
+
+Langkah 3 – Cek Status Denda
+Petugas akan mengecek status denda dari pemustaka.
+
+Langkah 4 – Bayar Denda
+Jika ada denda, pemustaka harus membayar denda.
+Catatan:
+
+Pemustaka yang belum membayar denda dilakukan suspend di sistem dengan jaminan KTM.
+
+Langkah 5 – Proses Pengembalian Buku
+Petugas melakukan proses pengembalian koleksi buku dalam sistem.
+
+Langkah 6 – Cetak Struk
+Petugas mencetak struk pengembalian koleksi buku.
+
+Langkah 7 – Penyerahan Struk
+Petugas menyerahkan struk pengembalian ke pemustaka.
+
+Layanan Repository Online – Perpustakaan Universitas Brawijaya
+
+Langkah 1 – Akses Website
+Pemustaka memulai dengan membuka website Perpustakaan UB:
+📎 https://lib.ub.ac.id/
+Lalu pilih menu “REPOSITORY”.
+
+Langkah 2 – Masukkan Kata Kunci
+Isi kolom pencarian "simple search" dengan kata kunci, lalu tekan tombol search.
+
+Langkah 3 – Kata Kunci Tidak Ditemukan
+Jika hasil pencarian tidak ditemukan,
+
+Pemustaka dapat mencari ulang dengan kata kunci yang berbeda.
+
+Langkah 4 – Kata Kunci Ditemukan
+Jika kata kunci ditemukan, lanjut ke langkah berikutnya.
+
+Langkah 5 – Klik Judul Repository
+Klik judul repository (karya ilmiah/tugas akhir) dari hasil pencarian.
+Katalog berisi:
+Abstrak
+Tipe karya ilmiah
+Nomor panggil
+Nomor identifikasi
+Subjek
+File repository (jika tersedia)
+
+Langkah 6 – Unduh File Repository
+Klik tombol Download untuk mengunduh file yang tersedia.
+
+Langkah 7 – Periksa Ketersediaan File
+Tidak semua file tersedia untuk diunduh.
+Periksa di katalog repository apakah file dapat diakses atau tidak.
+
+Langkah 8 – Hubungi Admin Help Desk
+Jika ada kendala, buka:
+📎 https://lib.ub.ac.id/
+Klik menu Help Desk Chat (ikon biru di pojok kanan bawah layar)
+
+Layanan Repository Offline – Perpustakaan Universitas Brawijaya
+
+Langkah 1 – Akses Aplikasi Repository
+Masuk ke aplikasi pencarian repository:
+📎 https://repository.ub.ac.id/
+
+Langkah 2 – Klik "Search Repository"
+
+Langkah 3 – Klik "Simple Search"
+
+Langkah 4 – Masukkan Kata Kunci
+Isikan kata kunci pencarian pada kolom “search”.
+
+Langkah 5 – Pilih Hasil Pencarian
+Pilih salah satu hasil pencarian.
+
+Jika teks bertuliskan "DALAM MASA EMBARGO", maka silakan copy nama penulis.
+
+Jika tidak dalam masa embargo, file bisa diunduh melalui desktop milik pemustaka.
+
+Langkah 6 – Buka Folder Repository Offline
+Di desktop layar utama, buka folder bernama "Repository Offline".
+
+Langkah 7 – Paste Nama Penulis
+Tempelkan nama penulis ke kolom “search” di bagian kanan atas folder Repository Offline.
+
+Langkah 8 – Akses File
+File hanya bisa diakses di tempat.
+
+File tidak bisa disalin, difoto, atau dipindah.
+
+Jika file tidak ditemukan di folder, petugas akan membantu mencarinya di folder backup sistem.
+
+Langkah 9 – Refresh Folder
+Setelah petugas melakukan konfirmasi ulang, silakan klik “refresh” pada folder pencarian.
+

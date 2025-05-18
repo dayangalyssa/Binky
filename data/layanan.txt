@@ -1,0 +1,49 @@
+Koleksi Digital:
+Perpustakaan Universitas Brawijaya mengimplementasikan sistem pengelolaan karya ilmiah terintegrasi yang memfasilitasi akses terhadap berbagai jenis karya akademik, mencakup skripsi, tesis, disertasi, serta tugas akhir mahasiswa melalui platform koleksi digital yang komprehensif. Karya ilmiah yang tidak berada dalam status embargo dapat diakses secara daring melalui portal repositori institusional http://repository.ub.ac.id. Sementara itu, karya ilmiah yang berstatus embargo hanya dapat diakses melalui terminal komputer yang telah disediakan di Ruang Multimedia Perpustakaan. Infrastruktur layanan tersebut telah dirancang secara strategis guna mengoptimalkan dukungan terhadap aktivitas akademik dan penelitian sivitas akademika.
+
+Referensi/E-Resource:
+Dalam rangka menunjang kegiatan riset dan pembelajaran sivitas akademika, Layanan Referensi Perpustakaan Universitas Brawijaya mengimplementasikan sistem akses terhadap sejumlah pangkalan data akademik terkemuka yang diperoleh melalui mekanisme berlangganan institusional. Layanan ini bertujuan untuk memperluas akses informasi bagi sivitas akademika Universitas Brawijaya. Informasi mengenai ketersediaan dan cara akses jurnal-jurnal tersebut juga disebarluaskan melalui berbagai klinik jurnal, pendampingan dan library class guna mengoptimalkan penggunaan e-resource yang dilanggan Universitas Brawijaya. Berikut adalah beberapa e-journal yang tersedia:
+
+1. ProQuest
+Menawarkan koleksi luas dari disertasi, tesis, artikel jurnal, dan sumber daya lainnya yang relevan dengan bidang studi ABI/Inform Collection, Health & Medical Complete, dan Research Library.
+
+2. IEEE Xplore Digital Library
+Menyediakan akses karya ilmiah dengan cakupan bidang Conference Proceeding dan IET Xplore Standart List.
+
+3. ScienceDirect
+Memberikan akses ke artikel dan buku elektronik dalam bidang multidisiplin.
+
+4. EBSCOhost
+Menyediakan akses ke berbagai jurnal akademik, majalah, dan sumber daya elektronik lainnya yang mencakup bidang Medline dan Business Source.
+
+5. Springer
+Menyediakan akses ke jutaan dokumen ilmiah, termasuk jurnal, buku, dan protokol penelitian dalam berbagai disiplin ilmu.
+
+6. Nature
+Menyediakan akses ke jutaan dokumen ilmiah, termasuk jurnal, buku, dan protokol penelitian dalam bidang eksakta.
+
+7. China Academic Journals Full-Text Database (CAJ)
+Menawarkan arsip jurnal akademik pada bidang studi literatur, sejarah dan filosofi.
+
+8. Westlaw
+Menyediakan akses ke jutaan dokumen ilmiah dalam berbagai bidang ilmu (multidisiplin).
+
+9. Emerald
+Menyediakan akses ke jutaan dokumen ilmiah berupa jurnal, buku dan studi kasus untuk mendukung berbagai kebutuhan pemustaka dalam hal referensi.
+
+Koleksi buku:
+- Buku Fisik: Jenis layanan ini memungkinkan pemustaka untuk melakukan peminjaman buku baik buku tandon (label merah) maupun buku-buku reguler (label putih).
+- Buku Digital: Perpustakaan Universitas Brawijaya menyediakan koleksi buku yang lengkap dan terus diperbarui melalui kerja sama dengan berbagai mitra dan pihak ketiga. Koleksi ini mencakup berbagai disiplin ilmu, dirancang untuk mendukung kebutuhan akademik dan penelitian sivitas akademika. Seluruh koleksi digital dapat diakses dengan mudah melalui platform e-library.ub.ac.id dan Wiley Online Library. Layanan ini merupakan komitmen Perpustakaan UB dalam memberikan akses literasi berkualitas tinggi bagi seluruh pengguna.
+
+Sirkulasi:
+Layanan sirkulasi merupakan fasilitas perpustakaan yang memfasilitasi proses peminjaman dan pengembalian koleksi pustaka oleh pemustaka. Dalam implementasinya, perpustakaan telah mengintegrasikan sistem peminjaman mandiri berbasis komputer, sementara proses pengembalian koleksi dikelola secara langsung oleh staf sirkulasi yang bertugas.
+
+Pendampingan:
+Perpustakaan Universitas Brawijaya menyediakan layanan pendampingan intensif yang diselenggarakan langsung di dalam perpustakaan. Layanan ini bertujuan untuk membimbing pemustaka secara mendalam dalam memanfaatkan berbagai fasilitas, layanan, dan e-resource yang tersedia. Dengan suasana belajar yang kondusif, layanan ini dirancang untuk membantu pemustaka memahami, mengakses, dan mengoptimalkan sumber daya perpustakaan guna mendukung aktivitas akademik dan penelitian mereka.
+
+Library Class:
+Library Class adalah layanan edukasi yang dirancang untuk memperkenalkan pemustaka kepada berbagai fasilitas dan layanan yang tersedia di Perpustakaan Universitas Brawijaya atas permintaan dari Fakultas. Melalui Library Class, pemustaka diajak memahami cara memanfaatkan koleksi, ruang, dan fitur yang ditawarkan secara maksimal, dengan fokus utama pada optimalisasi e-resource yang dilanggan UB. Program ini bertujuan untuk mendukung efektivitas proses belajar, penelitian, dan pengembangan akademik pemustaka. Layanan ini dirancang sebagai sosialisasi secara langsung di setiap fakultas.
+
+Klinik Journal:
+Perpustakaan Universitas Brawijaya menyediakan layanan pendampingan eksklusif bagi mahasiswa S1, S2, dan S3 untuk mendukung proses penyelesaian artikel jurnal. Layanan ini berlokasi di Ruang Scholar Lounge, tempat yang dirancang khusus untuk memberikan bimbingan dari tahap awal hingga penyelesaian karya ilmiah. Dengan pendampingan yang profesional dan personal, layanan ini hadir untuk memastikan kualitas karya akademik pemustaka mencapai standar terbaik.
+
