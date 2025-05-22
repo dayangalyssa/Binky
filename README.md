@@ -12,17 +12,20 @@ A Retrieval-Augmented Generation (RAG) chatbot using Llama to answer questions i
    ```
 
 2. **Prepare data**
-   - Place JSON data in `data/paper.json`
-   - Place text data in `data/documents.txt`
+   - Place JSON data in `binky/data/paper.json`
+   - Place text data in `binky/data/documents.txt`
 
-3. **Get Llama access**
-   - Create a [Hugging Face](https://huggingface.co/) account
-   - Request access to [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
-   - Create a token at [HF Settings](https://huggingface.co/settings/tokens)
-   - Create `.env` file:
-     ```
-     HUGGING_FACE_HUB_TOKEN=your_token_here
-     ```
+### Config Model
+Open config.py to set the model:
+```bash
+USE_GPU = False  # True if GPU
+```
+
+# Model settings 
+```bash
+MODEL_ID = "TheBloke/Llama-2-7B-Chat-GGUF"
+MODEL_FILE = "llama-2-7b-chat.Q4_K_M.gguf" 
+```
 
 ### Testing
 

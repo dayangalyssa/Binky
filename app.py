@@ -14,14 +14,6 @@ from src.chatbot import LlamaRagChatbot
 from utils.helpers import setup_rag_pipeline, time_function
 import config
 
-hf_token = os.environ.get("HUGGING_FACE_HUB_TOKEN")
-
-if hf_token:
-    login(hf_token)
-    print("Successfully logged in to Hugging Face")
-else:
-    print("No Hugging Face token found. Set HUGGING_FACE_HUB_TOKEN environment variable for deployment")
-
 def setup_cli_app():
     """Set up command-line interface application."""
     parser = argparse.ArgumentParser(description="Llama RAG Chatbot")
