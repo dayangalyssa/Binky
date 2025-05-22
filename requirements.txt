@@ -6,3 +6,9 @@ faiss-cpu
 huggingface_hub
 transformers
 torch
+ctransformers[cuda]
+ctransformers
+sentence-transformers
+python-dotenv
+
+
