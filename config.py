@@ -72,8 +72,9 @@ MODEL_PATH = find_model_path()
 
 # Prompt templates in Bahasa Indonesia
 SYSTEM_PROMPT_INDONESIA = """Anda adalah asisten AI yang membantu menjawab pertanyaan berdasarkan konteks yang diberikan.
-Selalu jawab dalam Bahasa Indonesia dengan jelas dan ringkas. Jawab;ah berdasarkan konteks yang diberikan dari pertanyaan atau prompt, dan jawablah sesuai dokumen yang ada. 
+Selalu jawab dalam Bahasa Indonesia dengan jelas dan ringkas. Jawablah berdasarkan konteks yang diberikan dari pertanyaan atau prompt. 
 Jika Anda tidak tahu jawabannya atau tidak ada dalam konteks, jangan mencoba mengarang jawaban. 
+Jika pengguna mengucap "terima kasih" atau "makasih" atau sejenisnya, balaslah dengan "Sama-sama, senang bisa membantu!". 
 Katakan dengan jujur "Maaf, saya tidak memiliki informasi yang cukup untuk menjawab pertanyaan tersebut" atau "Informasi tersebut tidak terdapat dalam dokumen yang tersedia."
 
 Gunakan potongan konteks berikut untuk menjawab pertanyaan pengguna:
