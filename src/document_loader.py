@@ -241,24 +241,43 @@ def load_text_file(file_path: str) -> List[Document]:
 def load_all_documents() -> List[Document]:
     """
     Load all documents from the configured data sources.
-    
-    Returns:
-        List of LangChain Document objects
     """
     documents = []
-    
+
     # Load JSON papers
     if os.path.exists(config.PAPERS_JSON_PATH):
         json_docs = load_json_papers(config.PAPERS_JSON_PATH)
         documents.extend(json_docs)
     else:
         print(f"Warning: JSON file not found at {config.PAPERS_JSON_PATH}")
-    
-    # Load library info text file
+
+    # Load buku.json
+    if os.path.exists(config.BUKU_JSON_PATH):
+        buku_docs = load_json_papers(config.BUKU_JSON_PATH)
+        documents.extend(buku_docs)
+    else:
+        print(f"Warning: JSON file not found at {config.BUKU_JSON_PATH}")
+
+    # Load documents.txt
     if os.path.exists(config.LIBRARY_INFO_PATH):
         text_docs = load_text_file(config.LIBRARY_INFO_PATH)
         documents.extend(text_docs)
     else:
         print(f"Warning: Text file not found at {config.LIBRARY_INFO_PATH}")
-    
+
+    # Load other .txt files (fasilitas, layanan, profil, sop)
+    text_paths = [
+        ("FASILITAS_PATH", config.FASILITAS_PATH),
+        ("LAYANAN_PATH", config.LAYANAN_PATH),
+        ("PROFIL_PATH", config.PROFIL_PATH),
+        ("SOP_PATH", config.SOP_PATH),
+    ]
+
+    for name, path in text_paths:
+        if os.path.exists(path):
+            docs = load_text_file(path)
+            documents.extend(docs)
+        else:
+            print(f"Warning: Text file not found at {path}")
+
     return documents

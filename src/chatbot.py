@@ -38,17 +38,13 @@ class LlamaRagChatbot:
         """
         # Retrieve relevant documents
         retrieved_docs = self.retriever.retrieve(query)
-        
-        # Check if we have relevant context
         has_relevant_context = len(retrieved_docs) > 0
-        
-        # Format the context from retrieved documents
+
+        #Augmented: add retrieval context to the prompt
         context = self.retriever.format_context(retrieved_docs) if has_relevant_context else ""
-        
-        # Format the prompt with the context
         rag_prompt = self.llm.format_rag_prompt(query, context)
         
-        # Generate a response using the LLM, passing the context flag
+        # Generate the prompt
         response = self.llm.generate_response(rag_prompt, has_context=has_relevant_context)
         
         # Add to chat history
@@ -87,8 +83,6 @@ class LlamaRagChatbot:
         Returns:
             Query in English for retrieval purposes
         """
-        # In a real implementation, you might want to detect the language and translate if needed
-        # For now, we'll just pass it through as-is since retrieval can work on Indonesian text too
         return query
     
     def set_language(self, language: str):

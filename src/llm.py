@@ -56,18 +56,18 @@ class LlamaInterface:
                     config.MODEL_ID,
                     model_file=config.MODEL_FILE,
                     model_type="llama",
-                    gpu_layers=config.GPU_LAYERS,  # 0 untuk CPU, >0 untuk GPU
+                    gpu_layers=config.GPU_LAYERS, 
                     context_length=config.MAX_INPUT_TOKENS,
-                    threads=config.THREADS,        # CPU threads
+                    threads=config.THREADS,    
                 )
             else:
                 # Load from local path
                 self.model = AutoModelForCausalLM.from_pretrained(
                     self.model_path,
                     model_type="llama",
-                    gpu_layers=config.GPU_LAYERS,  # 0 untuk CPU, >0 untuk GPU
+                    gpu_layers=config.GPU_LAYERS,  
                     context_length=config.MAX_INPUT_TOKENS,
-                    threads=config.THREADS,        # CPU threads
+                    threads=config.THREADS,        
                 )
             
             end_time = time.time()
@@ -104,7 +104,7 @@ class LlamaInterface:
         
         try:
             # If no context was found, there's a chance to return a default no-info answer
-            if not has_context and random.random() < 0.4:  # 40% chance to use default
+            if not has_context and random.random() < 0.4:  
                 return random.choice(config.DEFAULT_NO_INFO_ANSWERS)
             
             start_time = time.time()
@@ -117,26 +117,25 @@ class LlamaInterface:
                 top_p=config.TOP_P,
                 top_k=config.TOP_K,
                 repetition_penalty=config.REPETITION_PENALTY,
-                stop=["</s>", "[/INST]", "\n\n"]  # Stop tokens untuk Llama 2
+                stop=["</s>", "[/INST]", "\n\n"] 
             )
             
             end_time = time.time()
             gen_time = end_time - start_time
-            
-            # Hitung jumlah token yang dihasilkan untuk menghitung kecepatan
             response_tokens = len(generated_text.split()) - len(prompt.split())
             tokens_per_second = response_tokens / gen_time if gen_time > 0 else 0
             
             print(f"Generation completed in {gen_time:.2f} seconds")
             print(f"Speed: {tokens_per_second:.1f} tokens/second")
+
+            if generated_text.startswith(prompt):
+                response = generated_text[len(prompt):].strip()
             
-            # Trim the prompt from the response
-            response = generated_text[len(prompt):].strip()
-            
-            # Clean up response
+            else:
+                response = generated_text.strip()
+                
             response = self._clean_response(response)
-            
-            # If the generated response is in English, retry with explicit Indonesian instruction
+
             if config.OUTPUT_LANGUAGE == "bahasa_indonesia" and self._detect_english(response):
                 print("Detected English response, retrying in Bahasa Indonesia...")
                 retry_prompt = prompt + "\n\nPenting: Jawablah dalam Bahasa Indonesia."
@@ -151,8 +150,13 @@ class LlamaInterface:
                     stop=["</s>", "[/INST]", "\n\n"]
                 )
                 
-                response = generated_text[len(retry_prompt):].strip()
+                if generated_text.startswith(retry_prompt):
+                    response = generated_text[len(retry_prompt):].strip()
+                else:
+                    response = generated_text.strip()
+                
                 response = self._clean_response(response)
+        
             
             return response
         
@@ -206,7 +210,7 @@ class LlamaInterface:
                         "have", "has", "been", "would", "could", "should", "based", "information"]
         
         words = text.lower().split()
-        if len(words) < 3:  # Too short to determine
+        if len(words) < 3: 
             return False
             
         indonesian_count = sum(1 for word in words if word in indonesian_words)
