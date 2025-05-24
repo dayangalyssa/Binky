@@ -1,0 +1,53 @@
+{
+  "individual_scores": [
+    {
+      "query": "Apakah dalam koleksi Universitas Brawijaya terdapat buku yang berjudul “Nusa Tenggara Timur”? ",
+      "reference": "Ya, Perpustakaan Universitas Brawijaya memiliki koleksi buku berjudul “Nusa Tenggara Timur”. Anda dapat mencarinya di katalog perpustakaan.",
+      "generated": "Ya, ada beberapa buku yang berjudul \"Nusa Tenggara Timur\" dalam koleksi Universitas Brawijaya. Silakan lihat Document 1, Document 2, dan Document 3 untuk informasi lebih lanjut.",
+      "bleu_1": 0.23076923076923078,
+      "bleu_2": 7.165741990418252e-155,
+      "bleu_3": 5.4839821500978084e-204,
+      "bleu_4": 0.011371681934875243,
+      "cpu_usage": 46.349999999999994,
+      "latency_ms": 62103.679895401,
+      "num_docs_retrieved": 3
+    }
+  ],
+  "overall_scores": {
+    "bleu_1": [
+      0.23076923076923078
+    ],
+    "bleu_2": [
+      7.165741990418252e-155
+    ],
+    "bleu_3": [
+      5.4839821500978084e-204
+    ],
+    "bleu_4": [
+      0.011371681934875243
+    ],
+    "cpu_usage": [
+      46.349999999999994
+    ],
+    "latency_ms": [
+      62103.679895401
+    ]
+  },
+  "summary": {
+    "overall": {
+      "avg_bleu_1": 0.23076923076923078,
+      "std_bleu_1": 0.0,
+      "avg_bleu_2": 7.165741990418252e-155,
+      "std_bleu_2": 0.0,
+      "avg_bleu_3": 5.4839821500978084e-204,
+      "std_bleu_3": 0.0,
+      "avg_bleu_4": 0.011371681934875243,
+      "std_bleu_4": 0.0,
+      "avg_cpu_usage": 46.349999999999994,
+      "std_cpu_usage": 0.0,
+      "avg_latency_ms": 62103.679895401,
+      "std_latency_ms": 0.0
+    },
+    "total_tests": 1
+  }
+}

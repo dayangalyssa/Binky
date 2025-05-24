@@ -46,12 +46,22 @@ import multiprocessing
 CPU_CORES = multiprocessing.cpu_count()
 THREADS = min(CPU_CORES, 8) 
 
-TEMPERATURE = 0.2
-TOP_P = 0.9       
-TOP_K = 5
-REPETITION_PENALTY = 1.1
-MAX_NEW_TOKENS = 512
-MAX_INPUT_TOKENS = 2048  
+
+MODEL_CONFIG = {
+    "TEMPERATURE": 0.2,
+    "TOP_P": 0.9,       
+    "TOP_K": 5,
+    "REPETITION_PENALTY": 1.1,
+    "MAX_NEW_TOKENS": 512,
+    "MAX_INPUT_TOKENS": 2048
+}
+
+TEMPERATURE = MODEL_CONFIG["TEMPERATURE"]
+TOP_P = MODEL_CONFIG["TOP_P"]
+TOP_K = MODEL_CONFIG["TOP_K"]
+REPETITION_PENALTY = MODEL_CONFIG["REPETITION_PENALTY"]
+MAX_NEW_TOKENS = MODEL_CONFIG["MAX_NEW_TOKENS"]
+MAX_INPUT_TOKENS = MODEL_CONFIG["MAX_INPUT_TOKENS"]
 
 def find_model_path():
     base = os.path.join(os.getenv("HOME"), ".cache", "huggingface", "hub")
@@ -74,9 +84,8 @@ MODEL_PATH = find_model_path()
 SYSTEM_PROMPT_INDONESIA = """Anda adalah asisten AI yang membantu menjawab pertanyaan berdasarkan konteks yang diberikan.
 Selalu jawab dalam Bahasa Indonesia dengan jelas dan ringkas. Jawablah berdasarkan konteks yang diberikan dari pertanyaan atau prompt. 
 Jika Anda tidak tahu jawabannya atau tidak ada dalam konteks, jangan mencoba mengarang jawaban. 
-Jika pengguna mengucap "terima kasih" atau "makasih" atau sejenisnya, balaslah dengan "Sama-sama, senang bisa membantu!". 
-Katakan dengan jujur "Maaf, saya tidak memiliki informasi yang cukup untuk menjawab pertanyaan tersebut" atau "Informasi tersebut tidak terdapat dalam dokumen yang tersedia."
-
+Jika pengguna mengucap "terima kasih" atau "makasih" atau sejenisnya, balaslah dengan ucapan contohnya seperti "Sama-sama, senang bisa membantu!". 
+Jika ada kata halo ata Hi atau sejenisnya, menyapa balik pengguna tersebut dengan "Halo, ada yang bisa saya bantu hari ini?".
 Gunakan potongan konteks berikut untuk menjawab pertanyaan pengguna:
 {context}
 

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/353631868068226116/10173f9feb1c4222830560a6d7f49092/artifacts
+end_time: 1748096608556
+entry_point_name: ''
+experiment_id: '353631868068226116'
+lifecycle_stage: active
+run_id: 10173f9feb1c4222830560a6d7f49092
+run_name: vaunted-penguin-46
+run_uuid: 10173f9feb1c4222830560a6d7f49092
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748096608506
+status: 3
+tags: []
+user_id: root
