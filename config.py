@@ -9,21 +9,13 @@ import platform
 load_dotenv()
 
 # Pilihan untuk menggunakan GPU atau CPU
-USE_GPU = False  # Ubah ke True jika ingin menggunakan GPU
+USE_GPU = False  
 
-if USE_GPU and torch.cuda.is_available():
-    DEVICE = "cuda:0"
-    GPU_LAYERS = 32  # Jumlah layer yang dijalankan di GPU
-    print(f"[INFO] Model akan dijalankan di: {DEVICE}")
-else:
-    DEVICE = "cpu"
-    GPU_LAYERS = 0  # Tidak ada layer yang dijalankan di GPU
-    if USE_GPU and not torch.cuda.is_available():
-        print("[WARNING] CUDA tidak tersedia, menggunakan CPU sebagai fallback")
-    print(f"[INFO] Model akan dijalankan di: {DEVICE}")
+DEVICE = "cpu"
+GPU_LAYERS = 0 
 
 # Model settings
-MODEL_ID = "TheBloke/Llama-2-7B-Chat-GGUF"  # GGML model
+MODEL_ID = "TheBloke/Llama-2-7B-Chat-GGUF"  # GGUF model
 MODEL_FILE = "llama-2-7b-chat.Q4_K_M.gguf"  
 EMBEDDING_MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
 
@@ -37,32 +29,22 @@ FAISS_INDEX_PATH = os.path.join(DATA_DIR, "faiss_index")
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 
-# Retrieval settings
-TOP_K_RESULTS = 3
+TOP_K_RESULTS = 2
 
 # Language setting - Bahasa Indonesia
 OUTPUT_LANGUAGE = "bahasa_indonesia"
 
-# CPU Threading settings
 import multiprocessing
 CPU_CORES = multiprocessing.cpu_count()
-THREADS = min(CPU_CORES, 8)  # Maksimal 8 threads, atau sesuai jumlah core CPU
+THREADS = min(CPU_CORES, 8) 
 
-# Prompt engineering settings - Optimized for CPU
-if DEVICE == "cpu":
-    TEMPERATURE = 0.2
-    TOP_P = 0.9       
-    TOP_K = 2  
-    REPETITION_PENALTY = 1.1
-    MAX_NEW_TOKENS = 128 
-    MAX_INPUT_TOKENS = 512  
-else:
-    TEMPERATURE = 0.5 
-    TOP_P = 1.0
-    TOP_K = 5
-    REPETITION_PENALTY = 1.2
-    MAX_NEW_TOKENS = 512
-    MAX_INPUT_TOKENS = 2048
+TEMPERATURE = 0.2
+TOP_P = 0.9       
+TOP_K = 2  
+REPETITION_PENALTY = 1.1
+MAX_NEW_TOKENS = 512
+MAX_INPUT_TOKENS = 1028
+
 
 if platform.system() == "Windows":
     MODEL_PATH = os.path.join(os.getenv("USERPROFILE"), ".cache", "huggingface", "hub", MODEL_ID, MODEL_FILE)
