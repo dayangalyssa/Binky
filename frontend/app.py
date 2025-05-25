@@ -2,6 +2,8 @@
 import streamlit as st
 import requests
 import json
+import psutil
+import time
 
 st.set_page_config(
     page_title="Binky - Library Chatbot",
@@ -108,14 +110,35 @@ def check_backend_health():
     except:
         return False
 
+# --- Get CPU Usage ---
+def get_cpu_usage():
+    return psutil.cpu_percent(interval=0.5)
+
 # --- Display backend status ---
 with st.sidebar:
-    st.markdown("### Backend Status")
-    if check_backend_health():
-        st.success("✅ Backend Online")
-    else:
-        st.error("❌ Backend Offline")
-        st.warning("Jalankan backend dulu:\n```bash\ncd backend\nuvicorn main:app --reload\n```")
+    st.markdown("### System Metrics")
+    
+    # Create columns for metrics
+    col1, col2 = st.columns(2)
+    
+    # Backend Status
+    with col1:
+        if check_backend_health():
+            st.success("✅ Backend Online")
+        else:
+            st.error("❌ Backend Offline")
+    
+    # CPU Usage
+    with col2:
+        cpu_usage = get_cpu_usage()
+        st.metric(label="CPU Usage", value=f"{cpu_usage}%")
+    
+    # Memory Usage
+    memory_usage = psutil.virtual_memory().percent
+    st.metric(label="Memory Usage", value=f"{memory_usage}%")
+    
+    if not check_backend_health():
+        st.warning("backend offline:\n```bash\ncd backend\nuvicorn main:app --reload\n```")
 
 # --- Function to send request to backend ---
 def send_query_to_backend(query: str, language: str):
@@ -177,11 +200,17 @@ if prompt := st.chat_input(placeholder_text):
             import time
             start_time = time.time()
             
+            # Get initial CPU
+            cpu_before = get_cpu_usage()
+            
             # Send request to backend
             result, error = send_query_to_backend(prompt, language_code)
             
+            # Get final CPU
+            cpu_after = get_cpu_usage()
             end_time = time.time()
             response_time = round(end_time - start_time, 2)
+            cpu_usage_during_request = round((cpu_before + cpu_after) / 2, 2)
             
             if error:
                 # Handle error
@@ -201,13 +230,15 @@ if prompt := st.chat_input(placeholder_text):
                 
                 # Show response metadata
                 with st.expander("📊 Response Details"):
-                    col1, col2, col3 = st.columns(3)
+                    col1, col2, col3, col4 = st.columns(4)
                     with col1:
-                        st.metric("Documents Retrieved", result["num_docs_retrieved"])
+                        st.metric("Docs Retrieved", result["num_docs_retrieved"])
                     with col2:
-                        st.metric("Has Relevant Context", "Yes" if result["has_relevant_context"] else "No")
+                        st.metric("Has Context", "Yes" if result["has_relevant_context"] else "No")
                     with col3:
                         st.metric("Response Time", f"{response_time}s")
+                    with col4:
+                        st.metric("CPU Usage", f"{cpu_usage_during_request}%")
                 
                 # Add successful response to chat history
                 st.session_state.messages.append({
@@ -216,10 +247,10 @@ if prompt := st.chat_input(placeholder_text):
                     "metadata": {
                         "num_docs_retrieved": result["num_docs_retrieved"],
                         "has_relevant_context": result["has_relevant_context"],
-                        "response_time": response_time
+                        "response_time": response_time,
+                        "cpu_usage": cpu_usage_during_request
                     }
                 })
-
 # --- Footer ---
 st.sidebar.markdown("---")
 st.sidebar.markdown("### How to Run:")
@@ -247,5 +278,21 @@ if st.sidebar.checkbox("Show Debug Info"):
         "Backend URL": BACKEND_URL,
         "Selected Language": language_code,
         "Backend Health": check_backend_health(),
+        "CPU Usage": f"{get_cpu_usage()}%",
+        "Memory Usage": f"{psutil.virtual_memory().percent}%",
         "Total Messages": len(st.session_state.messages)
     })
+
+# Add real-time CPU monitor
+if st.sidebar.checkbox("Show CPU Monitor"):
+    cpu_chart = st.sidebar.line_chart()
+    mem_chart = st.sidebar.line_chart()
+    
+    # Only run if visible on page
+    if st.sidebar.button("Start Monitoring"):
+        for i in range(100):
+            # Add metrics to charts
+            cpu_chart.add_rows([get_cpu_usage()])
+            mem_chart.add_rows([psutil.virtual_memory().percent])
+            # Display for 1 second
+            time.sleep(1)
