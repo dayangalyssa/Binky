@@ -1,42 +1,37 @@
-# docker-compose.yml
 version: '3.8'
 
 services:
-  # Backend FastAPI service
   backend:
-    build: .
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: binky-backend
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
-      - ./data:/app/data  # Mount data folder untuk documents
-      - ./models:/app/models  # Mount models folder
+      - ./utils:/app/utils
+      - ./src:/app/src
+      - ./config.py:/app/config.py
+      - ./data:/app/data
     environment:
       - PYTHONPATH=/app
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+    networks:
+      - binky-network
 
-  # Frontend Streamlit service (optional)
   frontend:
     build:
       context: .
-      dockerfile: Dockerfile.streamlit
+      dockerfile: frontend/Dockerfile
+    container_name: binky-frontend
     ports:
       - "8501:8501"
-    depends_on:
-      - backend
     environment:
       - BACKEND_URL=http://backend:8000
-    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - binky-network
 
-  # Vector database (optional - jika pakai external DB)
-  # vectordb:
-  #   image: qdrant/qdrant
-  #   ports:
-  #     - "6333:6333"
-  #   volumes:
-  #     - ./qdrant_data:/qdrant/storage
+networks:
+  binky-network:
+    driver: bridge

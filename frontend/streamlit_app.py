@@ -6,10 +6,8 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import streamlit as st
-
-# Import langsung dari file tanpa melalui package
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'utils'))
-from helpers import setup_rag_pipeline
+from utils.helpers import setup_rag_pipeline
 
 from src.chatbot import LlamaRagChatbot
 import config

@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -47,7 +52,6 @@ async def chat_endpoint(req: QueryRequest):
     result = chatbot.process_query(req.query)
     return ChatResponse(
         response=result["response"],
-        num_docs_retrieved=result["num_docs_retrieved"],
         has_relevant_context=result["has_relevant_context"]
     )
 
