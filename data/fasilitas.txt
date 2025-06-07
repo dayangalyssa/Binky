@@ -1,8 +1,6 @@
-Sarana Prasarana Umum
 Perpustakaan Universitas Brawijaya dilengkapi dengan berbagai sarana dan prasarana modern untuk mengoptimalkan pengalaman akademik pemustaka. Fasilitas tersebut mencakup ruang baca yang nyaman dengan pencahayaan yang memadai, area diskusi kelompok yang kedap suara, komputer yang terhubung dengan internet berkecepatan tinggi, serta sistem penelusuran koleksi digital yang terintegrasi. Perpustakaan juga menyediakan fasilitas penunjang seperti mesin fotokopi mandiri, pemindai dokumen, printer, dan loker penyimpanan barang. Untuk kenyamanan pemustaka berkebutuhan khusus, perpustakaan dilengkapi dengan ramp. Seluruh area perpustakaan dijamin kebersihannya dengan adanya sistem pendingin ruangan dan didukung oleh jaringan WiFi berkecepatan tinggi yang dapat diakses di seluruh area perpustakaan.
 
-Sarana & Prasarana Umum Perpustakaan Universitas Brawijaya:
-
+Sarana & Prasarana Umum Perpustakaan Universitas Brawijaya adalah
 1. Ruang Baca – Ruang baca nyaman dengan pencahayaan memadai dan AC.
 2. Area Diskusi Kelompok – Kedap suara untuk kolaborasi akademik.
 3. Komputer Akses Internet – Terhubung internet berkecepatan tinggi.
@@ -16,8 +14,7 @@ Sarana & Prasarana Umum Perpustakaan Universitas Brawijaya:
 11. Tangga Difabel – Tangga khusus pengguna difabel.
 12. Pendingin Ruangan – Seluruh area dilengkapi AC.
 
-Zona & Ruangan Khusus:
-
+Zona & Ruangan Khusus: adalah
 13. Pintu Utama Perpustakaan
 14. Lobi Perpustakaan
 15. Presensi dengan Scan Barcode Kartu Anggota

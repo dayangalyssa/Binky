@@ -1,0 +1,53 @@
+{
+  "individual_scores": [
+    {
+      "query": "Jam berapakah perpustakaan UB buka?",
+      "reference": "Perpustakaan Universitas Brawijaya buka pada hari senin hingga jumat 08.00 - 20.00 WIB, sedangkan di hari sabtu, minggu dan libur nasional perpustakaan tutup.",
+      "generated": "Perpustakaan UB beroperasi dari hari senin hingga jumat pukul 08.00 - 20.00 WIB, sedangkan pada hari sabtu, minggu dan libur nasional perpustakaan tutup.",
+      "bleu_1": 0.8260869565217391,
+      "bleu_2": 0.7504939085158303,
+      "bleu_3": 0.6684306444759427,
+      "bleu_4": 0.5861137788133826,
+      "cpu_usage": 46.4,
+      "latency_ms": 48524.04880523682,
+      "num_docs_retrieved": 3
+    }
+  ],
+  "overall_scores": {
+    "bleu_1": [
+      0.8260869565217391
+    ],
+    "bleu_2": [
+      0.7504939085158303
+    ],
+    "bleu_3": [
+      0.6684306444759427
+    ],
+    "bleu_4": [
+      0.5861137788133826
+    ],
+    "cpu_usage": [
+      46.4
+    ],
+    "latency_ms": [
+      48524.04880523682
+    ]
+  },
+  "summary": {
+    "overall": {
+      "avg_bleu_1": 0.8260869565217391,
+      "std_bleu_1": 0.0,
+      "avg_bleu_2": 0.7504939085158303,
+      "std_bleu_2": 0.0,
+      "avg_bleu_3": 0.6684306444759427,
+      "std_bleu_3": 0.0,
+      "avg_bleu_4": 0.5861137788133826,
+      "std_bleu_4": 0.0,
+      "avg_cpu_usage": 46.4,
+      "std_cpu_usage": 0.0,
+      "avg_latency_ms": 48524.04880523682,
+      "std_latency_ms": 0.0
+    },
+    "total_tests": 1
+  }
+}

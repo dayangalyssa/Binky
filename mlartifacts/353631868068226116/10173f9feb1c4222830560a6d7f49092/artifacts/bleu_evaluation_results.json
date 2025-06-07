@@ -1,0 +1,53 @@
+{
+  "individual_scores": [
+    {
+      "query": "Jelaskan apa itu layanan 'Klinik Journal' dalam Universitas Brawijaya?",
+      "reference": "Perpustakaan Universitas Brawijaya menyediakan layanan pendampingan eksklusif bagi mahasiswa S1, S2, dan S3 untuk mendukung proses penyelesaian artikel jurnal. Layanan ini berlokasi di Ruang Scholar Lounge, tempat yang dirancang khusus untuk memberikan bimbingan dari tahap awal hingga penyelesaian karya ilmiah. Dengan pendampingan yang profesional dan personal, layanan ini hadir untuk memastikan kualitas karya akademik pemustaka mencapai standar terbaik.",
+      "generated": "Layanan 'Klinik Journal' adalah layanan pendampingan eksklusif bagi mahasiswa S1, S2, dan S3 untuk mendukung proses penyelesaian artikel jurnal. Layanan ini berlokasi di Ruang Scholar Lounge dan menyediakan bimbingan dari tahap awal hingga penyelesaian karya ilmiah.",
+      "bleu_1": 0.48244220547930833,
+      "bleu_2": 0.4494376130054911,
+      "bleu_3": 0.43296942810759814,
+      "bleu_4": 0.4178807475023353,
+      "cpu_usage": 46.0,
+      "latency_ms": 72977.05149650574,
+      "num_docs_retrieved": 3
+    }
+  ],
+  "overall_scores": {
+    "bleu_1": [
+      0.48244220547930833
+    ],
+    "bleu_2": [
+      0.4494376130054911
+    ],
+    "bleu_3": [
+      0.43296942810759814
+    ],
+    "bleu_4": [
+      0.4178807475023353
+    ],
+    "cpu_usage": [
+      46.0
+    ],
+    "latency_ms": [
+      72977.05149650574
+    ]
+  },
+  "summary": {
+    "overall": {
+      "avg_bleu_1": 0.48244220547930833,
+      "std_bleu_1": 0.0,
+      "avg_bleu_2": 0.4494376130054911,
+      "std_bleu_2": 0.0,
+      "avg_bleu_3": 0.43296942810759814,
+      "std_bleu_3": 0.0,
+      "avg_bleu_4": 0.4178807475023353,
+      "std_bleu_4": 0.0,
+      "avg_cpu_usage": 46.0,
+      "std_cpu_usage": 0.0,
+      "avg_latency_ms": 72977.05149650574,
+      "std_latency_ms": 0.0
+    },
+    "total_tests": 1
+  }
+}
