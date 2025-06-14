@@ -1,18 +1,40 @@
 # 🦙 Llama RAG Chatbot
 
-This project is an AI-powered chatbot system designed specifically for library services. It is built using the LLaMA 2 large language model and enhanced with RAG (Retrieval-Augmented Generation) to provide more accurate and context-aware responses based on real library data.
+Proyek ini merupakan sistem chatbot yang dirancang khusus untuk layanan perpustakaan. Sistem ini dibangun menggunakan _Large Languange Model_ LLaMA 2 dan diperkuat dengan pendekatan RAG _(Retrieval-Augmented Generation)_ untuk memberikan jawaban yang lebih akurat dan sesuai konteks berdasarkan data perpustakaan yang nyata.
 
-To achieve this, we use a FAISS vector database to store and search through documents. When a user asks a question, the system retrieves relevant information from the database and feeds it to the model to generate informed and helpful answers.
+Untuk mencapai hal ini, sistem menggunakan FAISS sebagai basis data vektor untuk menyimpan dan mencari dokumen. Ketika pengguna mengajukan pertanyaan, sistem akan mengambil informasi yang relevan dari database dan mengirimkannya ke model untuk menghasilkan jawaban yang lebih tepat.
+
+## Arsitektur
+### Mengapa sistem dibangun dengan pendekatan ini?
+   Sistem chatbot perpustakaan ini dirancang untuk mempermudah mahasiswa dan sivitas akademika Universitas Brawijaya dalam mencari informasi secara cepat dan efisien tanpa perlu datang langsung ke petugas. Beberapa alasan utama pemilihan arsitektur ini adalah:
+   - Modularitas & Skalabilitas: Dengan memisahkan antar komponen (UI, backend, database, LLM), sistem dapat dengan mudah dikembangkan atau ditingkatkan tanpa memengaruhi keseluruhan arsitektur.
+   - Responsif & Real-time: FastAPI dipilih karena performanya yang tinggi untuk REST API, sehingga cocok untuk menangani permintaan real-time dari chatbot.
+   - Kemampuan Pemahaman Bahasa Alami: Integrasi dengan model LLM seperti LLaMA memungkinkan sistem memahami dan menjawab pertanyaan dalam bahasa alami dengan konteks yang lebih baik.
+   - Efisiensi Pencarian Dokumen: Menggunakan FAISS sebagai vector database memungkinkan pencarian berbasis semantic similarity, lebih relevan daripada pencarian berbasis kata kunci biasa.
+   - Portabilitas & Reproduksibilitas: Dengan Docker, sistem bisa dijalankan di berbagai lingkungan tanpa konfigurasi ulang, sedangkan MLflow memungkinkan pengawasan dan evaluasi eksperimen model secara otomatis.
+
+### Bagaimana sistem ini bekerja?
+
+1. Pengguna berinteraksi melalui antarmuka chatbot yang dibangun dengan Streamlit.
+2. Permintaan dikirim ke backend melalui REST API yang dibuat menggunakan FastAPI.
+3. FastAPI akan:
+   - Jika perlu pencarian data, akan mengambil embedding dari pertanyaan pengguna.
+   - Melakukan pencocokan dengan dokumen yang relevan di FAISS Vector Database.
+5. Setelah dokumen relevan ditemukan, sistem menyusun prompt yang berisi:
+   - Pertanyaan pengguna
+   - Dokumen terkait
+6. Prompt tersebut dikirim ke model LLaMA, yang akan menghasilkan jawaban berdasarkan konteks tersebut.
+7. Jawaban dari model dikembalikan ke FastAPI dan diteruskan ke UI chatbot Streamlit.
+8. Sementara itu, proses pelatihan model, pengujian, dan pengelolaan eksperimen dilakukan dengan MLflow, dan semua komponen dijalankan dalam Docker container untuk menjaga konsistensi dan kemudahan deployment.
 
 ## Quick Start
-
 ### Setup
 
 1. **Create and Activate Conda Environment**
+   
+   Pastikan Anda telah menginstal Anaconda atau Miniconda.
 
-   Make sure you have Anaconda or Miniconda installed.
-
-   Then, open a terminal and run:
+   Buka terminal dan jalankan:
    ```bash
    conda create -n llama-chat python=3.10 -y
    conda activate llama-chat
@@ -24,7 +46,7 @@ To achieve this, we use a FAISS vector database to store and search through docu
    ```
 
 ### Config Model
-Open config.py to set the model:
+Buka file config.py untuk mengatur model:
 ```bash
 USE_GPU = False  # True if GPU
 ```
@@ -34,7 +56,7 @@ USE_GPU = False  # True if GPU
 MODEL_ID = "TheBloke/Llama-2-7B-Chat-GGUF"
 MODEL_FILE = "llama-2-7b-chat.Q5_K_S.gguf"
 ```
-📌 Note: Make sure the model file llama-2-7b-chat.Q5_K_S.gguf is already downloaded and placed in the correct directory.
+📌 Catatan: Pastikan file model llama-2-7b-chat.Q5_K_S.gguf telah diunduh dan ditempatkan di direktori yang benar.
 
 ### Testing
 
@@ -58,40 +80,40 @@ MODEL_FILE = "llama-2-7b-chat.Q5_K_S.gguf"
    ```
 3. **Running with Docker + FastAPI Backend**
 
-   This project is containerized using Docker for easier deployment and integrates with a FastAPI backend for API-based inference.
+   Proyek ini telah dikontainerisasi menggunakan Docker untuk memudahkan proses deployment dan terintegrasi dengan backend FastAPI untuk inferensi berbasis API.
 
-   Step 1: start the backend with Docker
+Langkah 1: Jalankan backend dengan Docker
    ```bash
    docker run -p 8000:8000 backend
    ```
 
-      Step  2: Open the frontend
+      Langkah 2: Buka antarmuka frontend
    ```bash
    streamlit run frontend/streamlit_app.py --server.port 8501 &
    ```
-   Alternative (Without Docker): Run Backend with Uvicorn
-   If you prefer not to use Docker, you can run the FastAPI backend manually:
-   
-      Step 1: start the backend with uvicorn
+   Alternatif (Tanpa Docker): Menjalankan Backend dengan Uvicorn
+   Jika tidak ingin menggunakan Docker, backend FastAPI juga dapat dijalankan secara manual:
+
+   Langkah 1: Jalankan backend dengan uvicorn
       ```bash
       uvicorn backend.main:app --host 0.0.0.0 --port 8000 &
       ```
-      Step  2: Open the frontend
+      Langkah 2: Buka antarmuka frontend
       ```bash
       streamlit run frontend/streamlit_app.py --server.port 8501 &
       ```
 ## Features
 
-- Loads and processes JSON and text documents
-- Uses FAISS for store and search
-- Answers in Bahasa Indonesia
-- Reduces hallucination when information isn't found
-- Offers both CLI and web interfaces
+- Memuat dan memproses dokumen JSON dan teks
+- Menggunakan FAISS untuk penyimpanan dan pencarian
+- Menjawab dalam Bahasa Indonesia
+- Mengurangi kemungkinan jawaban halusinasi ketika informasi tidak ditemukan
+- Mendukung antarmuka CLI dan web
 
 ## Troubleshooting
 
-- **Hugging Face Access**: Make sure you have a format in `.cache`
-- **Performance**: Enable GPU by setting `USE_CUDA=True`
+- **Akses Hugging Face**: Pastikan model tersedia dalam format `.cache`
+- **Performa**: Aktifkan GPU dengan mengatur `USE_CUDA=True`
 
 ## Structure
 
