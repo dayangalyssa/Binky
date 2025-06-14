@@ -6,6 +6,7 @@ Untuk mencapai hal ini, sistem menggunakan FAISS sebagai basis data vektor untuk
 
 ## Arsitektur
 ### Mengapa sistem dibangun dengan pendekatan ini?
+![UI Binky](assets/UI_binky.png)
    Sistem chatbot perpustakaan ini dirancang untuk mempermudah mahasiswa dan sivitas akademika Universitas Brawijaya dalam mencari informasi secara cepat dan efisien tanpa perlu datang langsung ke petugas. Beberapa alasan utama pemilihan arsitektur ini adalah:
    - Modularitas & Skalabilitas: Dengan memisahkan antar komponen (UI, backend, database, LLM), sistem dapat dengan mudah dikembangkan atau ditingkatkan tanpa memengaruhi keseluruhan arsitektur.
    - Responsif & Real-time: FastAPI dipilih karena performanya yang tinggi untuk REST API, sehingga cocok untuk menangani permintaan real-time dari chatbot.
