@@ -14,6 +14,7 @@ Untuk mencapai hal ini, sistem menggunakan FAISS sebagai basis data vektor untuk
    - Portabilitas & Reproduksibilitas: Dengan Docker, sistem bisa dijalankan di berbagai lingkungan tanpa konfigurasi ulang, sedangkan MLflow memungkinkan pengawasan dan evaluasi eksperimen model secara otomatis.
 
 ### Bagaimana sistem ini bekerja?
+![Diagram Arsitektur](assets/diagram_binky.png)
 
 1. Pengguna berinteraksi melalui antarmuka chatbot yang dibangun dengan Streamlit.
 2. Permintaan dikirim ke backend melalui REST API yang dibuat menggunakan FastAPI.
